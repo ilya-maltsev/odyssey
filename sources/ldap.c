@@ -130,7 +130,11 @@ od_retcode_t od_ldap_search_storage_credentials(od_logger_t *logger,
 		od_snprintf(host_db, sizeof(host_db), "%s_%s",
 			    rule->storage->host,
 			    client->startup.database.value);
-		if (strstr((char *)values[i]->bv_val, host_db)) {
+		char host_db_all[128];
+		od_snprintf(host_db_all, sizeof(host_db_all), "%s_%s",
+			    rule->storage->host,
+			    "all");
+		if (strstr((char *)values[i]->bv_val, host_db) || strstr((char *)values[i]->bv_val, host_db_all)) {
 			od_list_t *j;
 			od_list_foreach(&rule->ldap_storage_creds_list, j)
 			{
@@ -152,7 +156,6 @@ od_retcode_t od_ldap_search_storage_credentials(od_logger_t *logger,
 				char host_db_user[128];
 				od_snprintf(host_db_user, sizeof(host_db_user),
 					    "%s_%s", host_db, lsc->name);
-
 				if (strstr((char *)values[i]->bv_val,
 					   host_db_user)) {
 					od_debug(logger, "auth_ldap", client,
