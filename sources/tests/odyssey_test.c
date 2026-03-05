@@ -118,7 +118,6 @@ extern void odyssey_test_address_cmp(void);
 extern void odyssey_test_hashmap(void);
 extern void odyssey_test_logger(void);
 
-
 extern void machinarium_test_tsan_simple_race_example(void);
 
 int main(int argc, char *argv[])
