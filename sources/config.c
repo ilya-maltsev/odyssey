@@ -329,8 +329,7 @@ void od_config_print(od_config_t *config, od_logger_t *logger)
 	}
 	if (config->log_max_msg_size) {
 		od_log(logger, "config", NULL, NULL,
-		       "log_max_msg_size        %d",
-		       config->log_max_msg_size);
+		       "log_max_msg_size        %d", config->log_max_msg_size);
 	}
 	if (config->log_syslog_facility) {
 		od_log(logger, "config", NULL, NULL,
