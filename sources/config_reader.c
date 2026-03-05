@@ -3326,8 +3326,8 @@ static int od_config_reader_parse(od_config_reader_t *reader,
 			continue;
 		/* log_max_msg_size */
 		case OD_LLOG_MAX_MSG_SIZE:
-			if (!od_config_reader_number(reader,
-						     &config->log_max_msg_size)) {
+			if (!od_config_reader_number(
+				    reader, &config->log_max_msg_size)) {
 				goto error;
 			}
 			continue;
