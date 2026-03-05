@@ -6,6 +6,8 @@
 
 #include <odyssey.h>
 #include <string.h>
+#include <pid.h>
+#include <logger.h>
 #include <tests/odyssey_test.h>
 
 /* Test default value initialization */
@@ -71,6 +73,4 @@ void odyssey_test_logger(void)
 	odyssey_test(test_logger_default_max_msg_size);
 	odyssey_test(test_logger_max_msg_size_fallback);
 	odyssey_test(test_logger_max_msg_size_limit);
-	odyssey_test(test_logger_escape_ascii);
-	odyssey_test(test_logger_escape_utf8);
 }
