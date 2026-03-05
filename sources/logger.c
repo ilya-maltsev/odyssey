@@ -945,8 +945,8 @@ extern void od_logger_write_plain(od_logger_t *logger, od_logger_level_t level,
 			       logger->log_max_msg_size :
 			       OD_LOGLINE_MAXLEN_LIMIT;
 	va_list empty_va_list = { 0 };
-	int len = od_logger_format(logger, level, context, client, server, string,
-			       empty_va_list, output, buf_size);
+	int len = od_logger_format(logger, level, context, client, server,
+				   string, empty_va_list, output, buf_size);
 
 	if (logger->loaded) {
 		/* create new log event and pass it to logger pool */
